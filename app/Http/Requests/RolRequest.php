@@ -24,7 +24,7 @@ class RolRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'required',
+            //'id'=>'required',
             'nombre'=>'required'
         ];
     }

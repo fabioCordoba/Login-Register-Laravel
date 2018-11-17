@@ -38,7 +38,7 @@ class rolController extends Controller
     {
       if($request->ajax()){
         $rol = new Rol();
-        $rol->id = $request->id;
+        //$rol->id = $request->id;
         $rol->nombre = $request->nombre;
         $rol->save();
         $respuesta=$rol;

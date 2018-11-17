@@ -1,17 +1,18 @@
 //boton crar nuevo rol
 $(document).ready( function() {
-    var route ="/Rol";
+    var route ="Rol";
     var token = $('#token').val();
   $('#agregar').click(function(){
-    var id_dato = $('#id_rol_agregar').val();
+    //var id_dato = $('#id_rol_agregar').val();
     var nom_dato = $('#nombre_rol_agregar').val();
     $.ajax({
   url: route,
   headers: {'X-CSRF-TOKEN':token},
   type: 'POST',
   dataType: 'json',
-  data:{id: id_dato,
-        nombre: nom_dato
+  data:{
+    //id: id_dato,
+    nombre: nom_dato
        },
  success: function(data){
     if (data.success == 'true') {
@@ -19,7 +20,7 @@ $(document).ready( function() {
       $('#modalagregar').modal('toggle');//ocultar modal
       $("#modalagregar .close").click();//por si no se cierra correctamente lansamos el evento .close
       $('#message-update-crear').fadeIn(400);//muestra el mensaje oculto mensaje que indiga que se guardo corectamente
-      $('#id_rol_agregar').val('');
+      //$('#id_rol_agregar').val('');
       $('#nombre_rol_agregar').val('');
     }
   },
@@ -36,13 +37,13 @@ error: function(msj){
 });
 //boton editar rol
 function mostrar(datos){
-    ruta ="/Rol/"+datos+"/edit";
+    ruta ="Rol/"+datos+"/edit";
   $.get(ruta, function(res){//extraigo todos los datos de mi bd
     id=res.id;
     nombre=res.nombre;
     $('#id_rol_Editar').val(id);
     $('#nombre_rol_Editar').val(nombre);
-    $('#EditarModalLabel').text('Editar Rol: '+id);
+    //$('#EditarModalLabel').text('Editar Rol: '+id);
     console.log(nombre+id);
   });
 }
@@ -51,7 +52,7 @@ $(document).ready(function(){
    $('#editar_rol').click(function(){
       var id_dato=$('#id_rol_Editar').val();;
        var nom_dato=$('#nombre_rol_Editar').val();
-        var ruta="/Rol/"+id_dato+"";
+        var ruta="Rol/"+id_dato+"";
           var token = $('#token').val();
               $.ajax({
                  url: ruta,
@@ -83,7 +84,7 @@ $(document).ready(function(){
 });
   //eliminar un registro ................
   function eliminar(datos){
-      var ruta="/Rol/"+datos+"";
+      var ruta="Rol/"+datos+"";
         var token = $('#token').val();
             $.ajax({
                url: ruta,

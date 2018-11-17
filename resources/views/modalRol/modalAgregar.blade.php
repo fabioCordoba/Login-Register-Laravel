@@ -14,12 +14,12 @@
       <div class="modal-body">
         <form class="fedit" action='Rol.update' method="PUT">
           <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-          <div class="form-group row">
+          <!-- <div class="form-group row">
               <label for="id_rol" class="col-md-4 col-form-label text-md-right">ID Rol</label>
               <div class="col-md-6">
                   <input type="text" id="id_rol_agregar" class="form-control" value="">
               </div>
-          </div>
+          </div>-->
           <div class="form-group row">
               <label for="nombre_rol" class="col-md-4 col-form-label text-md-right">Nombre Rol</label>
               <div class="col-md-6">
@@ -29,7 +29,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <a href="#" id="agregar" class="'btn btn-primary btn-sm" role="button" aria-pressed="true">AGREGAR</a>
+        <a href="#" id="agregar" class="btn btn-primary" role="button" aria-pressed="true">AGREGAR</a>
       </div>
     </div>
   </div>

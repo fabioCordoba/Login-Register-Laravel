@@ -46,7 +46,7 @@
                 <a data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample"> <strong>Roles</strong><i class="fas fa-bone"></i></a>
                 <div id="collapse3" class="panel-collapse collapse">
                   <div class="panel-body"><a type="button" data-toggle="modal" data-target="#exampleModal" href="#" id="Reg">Create</a></div>
-                  <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Read</a></div>
+                  <div class="panel-body"><a type="button" href="{{ url('/Rol') }}">Read</a></div>
                   <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Update</a></div>
                   <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Delete</a></div>
                 </div>
