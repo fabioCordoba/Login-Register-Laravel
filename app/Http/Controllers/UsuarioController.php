@@ -34,6 +34,7 @@ class UsuarioController extends Controller
       $user->supersu = 0;
       $user->id_rol = $request->id_rol;
       $user->save();
+
       return response()->json($user);
     }
     /**
@@ -54,8 +55,6 @@ class UsuarioController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-
-
       Usuario::create([
         'nombre'=>$request['nombre'],
         'id_rol'=>$request['id_rol'],

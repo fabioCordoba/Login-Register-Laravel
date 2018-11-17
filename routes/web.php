@@ -18,6 +18,7 @@ Route::resource('Usuario','UsuarioController');
 Route::get('logout','LogInController@logout');
 Route::DELETE('/eliminar-Usuario/{id}','UsuarioController@destroyUser')->name('destroyUser');
 Route::POST('createUs','UsuarioController@createUs');
+Route::resource('Rol','rolController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
