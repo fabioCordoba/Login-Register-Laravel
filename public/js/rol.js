@@ -20,6 +20,11 @@ $(document).ready( function() {
       $('#modalagregar').modal('toggle');//ocultar modal
       $("#modalagregar .close").click();//por si no se cierra correctamente lansamos el evento .close
       $('#message-update-crear').fadeIn(400);//muestra el mensaje oculto mensaje que indiga que se guardo corectamente
+
+      setTimeout(function() {//al pasar 3000 milisegundos se oculte el mensaje.
+      $("#message-update-crear").fadeOut(1500);
+       },3000);//.................................................................
+
       //$('#id_rol_agregar').val('');
       $('#nombre_rol_agregar').val('');
     }
@@ -69,6 +74,10 @@ $(document).ready(function(){
                       $('#modalEditar').modal('toggle');//ocultar modal
                       $("#modalEditar .close").click()
                       $('#message-update').fadeIn(400);//muestra el mensaje oculto
+
+                      setTimeout(function() {//al pasar 3000 milisegundos se oculte el mensaje.
+                      $("#message-update").fadeOut(1500);
+                       },3000);//.................................................................
                     }
                   },
                   error: function(msj){
@@ -95,7 +104,10 @@ $(document).ready(function(){
                    $(".table").load(" .table");//recargar solamete el elemeto tabla  , el espacio de el selesctor en en load deve ir
                  //  $(".bedit").load(" .bedit");
                    $('#message-eliminar').fadeIn(400);//muestra el mensaje oculto
-                   $('#message-eliminar').fadeOut();
+
+                   setTimeout(function() {//al pasar 3000 milisegundos se oculte el mensaje.
+                   $("#message-eliminar").fadeOut(1500);
+                    },3000);//.................................................................
                }
       });
   }
