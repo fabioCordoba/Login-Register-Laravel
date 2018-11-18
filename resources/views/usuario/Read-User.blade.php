@@ -40,7 +40,7 @@
                     <td>{{$user->updated_at}}</td>
                     <td>
                       <div class="row justify-content-center">
-                        {!!link_to_route('Usuario.edit',$ttle ='Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+                        <a href="#" id="ModalEditar" class="editar-btn btn btn-primary btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#M-Editar" value="{{$user->id}}" onclick="mostrar({{$user->id}});">Editar</a>
                         {!!Form::open(['route'=>['destroyUser',$user->id],'method'=>'DELETE'])!!}
                           <a class="btnD btn btn-danger btn-sm" href="#">Eliminar</a>
                         {!!Form::close()!!}
@@ -79,5 +79,6 @@
     </div>
     @section('script')
       <script src="{{asset('js/Script.js')}}"></script>
+      <script src="{{asset('js/EditarUs.js')}}"></script>
       <script src="{{asset('js/eliminarUser.js')}}"></script>
     @endsection

@@ -88,7 +88,10 @@ class UsuarioController extends Controller
     public function edit($id)
     {
       $users = Usuario::find($id);
-      return view('usuario/EditUser',['users'=>$users]);
+      //return view('usuario/EditUser',['users'=>$users]);
+      //$rol=Rol::find($id);
+      return $users;
+      return response()->json($users);
     }
 
     /**
@@ -100,11 +103,28 @@ class UsuarioController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-        $users = Usuario::find($id);
-        $users->fill($request->all());
-        $users->save();
-        Session::flash('message','Datos De Usuario Editados Correctamente....');
-        return redirect::to('/Usuario');
+        //$users = Usuario::find($id);
+        //$users->fill($request->all());
+        //$users->save();
+        //Session::flash('message','Datos De Usuario Editados Correctamente....');
+        //return redirect::to('/Usuario');
+
+        if($request->ajax()){
+          $id=$request->id;
+          $users = Usuario::where('id','=',$id)->firstOrfail();
+          $users->nombre = $request->nombre;
+          $users->id_rol = $request->id_rol;
+          $users->nick = $request->nick;
+          //$user->supersu = 0;
+          $users->password = $request->password;
+          $users->save();
+          $respuesta=$users;
+          if($respuesta){
+            return response()->json(['success'=>'true']);
+          }else{
+            return response()->json(['success'=>'false']);
+          }
+        }
     }
 
     /**
