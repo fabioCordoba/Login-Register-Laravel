@@ -34,12 +34,8 @@
               <div>
                 <a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample"> <strong>Usuarios</strong><i class="fas fa-address-card"></i></a>
                 <div id="collapse2" class="panel-collapse collapse">
-                  <div class="panel-body"><a type="button" class="create-modal" href="#" id="Reg">Create-M</a></div>
                   <div class="panel-body"><a type="button" href="{{ route('Usuario.create') }}">Create</a></div>
                   <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Read</a></div>
-                  <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Update</a></div>
-                  <div class="panel-body"><a type="button" href="{{ route('Usuario.index') }}">Delete</a></div>
-                  <div class="panel-body"><a type="button" id="user">user</a></div>
                 </div>
               </div>
               <div>

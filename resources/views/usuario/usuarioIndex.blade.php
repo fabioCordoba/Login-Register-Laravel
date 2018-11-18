@@ -8,5 +8,5 @@
     </div>
 </div>
 @include('usuario/ModalReg')
-@include('usuario/ModalEliminar')
+@include('usuario/ModalEditarUs')
 @endsection
