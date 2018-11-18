@@ -101,10 +101,8 @@ $(document).ready(function(){
                type: 'DELETE',
                dataType: 'json',
                success: function(){
+                   $('#message-eliminar').fadeIn();//muestra el mensaje oculto
                    $(".table").load(" .table");//recargar solamete el elemeto tabla  , el espacio de el selesctor en en load deve ir
-                 //  $(".bedit").load(" .bedit");
-                   $('#message-eliminar').fadeIn(400);//muestra el mensaje oculto
-
                    setTimeout(function() {//al pasar 3000 milisegundos se oculte el mensaje.
                    $("#message-eliminar").fadeOut(1500);
                     },3000);//.................................................................
